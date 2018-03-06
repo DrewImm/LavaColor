@@ -120,9 +120,9 @@ var LavaColor = function()
         var r1c = this.getSinePoint(this.sineT, 1);
         var g1c = this.getSinePoint(this.sineT, 1);
         var b1c = this.getSinePoint(this.sineT, 1);
-        var r2c = this.getSinePoint(this.sineT, 0);
-        var g2c = this.getSinePoint(this.sineT, 0);
-        var b2c = this.getSinePoint(this.sineT, 0);
+        var r2c = this.getSinePoint(this.sineT, 0.25);
+        var g2c = this.getSinePoint(this.sineT, 0.25);
+        var b2c = this.getSinePoint(this.sineT, 0.25);
 
         var r1 = Math.floor(Math.ceil(this.r1 + r1c, 200), 100);
         var g1 = Math.floor(Math.ceil(this.g1 + g1c, 200), 100);
