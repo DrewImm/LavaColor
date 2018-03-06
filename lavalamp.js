@@ -176,11 +176,11 @@ var LavaColor = function()
 
 var mylava = new LavaColor();
 mylava.setColor(
-    75, 190, 75,
-    75, 75, 190
+    85, 190, 85,
+    85, 85, 190
 );
-mylava.setAmplitude(25);
-mylava.setSpeed(0.1);
+mylava.setAmplitude(15);
+mylava.setSpeed(0.09);
 mylava.setRotation(100);
 mylava.paint("lavatest");
 mylava.paint("lava-button");
