@@ -1,0 +1,32 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    color: #fff;
+    font-family: Arial;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+#lavatest {
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section1heading {
+    text-align: center;
+
+    margin: 1em auto;
+    padding: 1em;
+}
