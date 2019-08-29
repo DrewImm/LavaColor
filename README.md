@@ -49,6 +49,10 @@ Note that the amplitude PLUS each color should'nt add up to much more than 255 o
 **mylava.setSineOffset(X)**
 Set the shift phase. https://en.wikipedia.org/wiki/Phase_(waves)#Phase_shift
 
+**mylava.setSpeedRandom(X)**
+Randomizes the speed based on this value, which makes the paint look more lively and less rigidly-timed.
+Default is 0.15, range is 0-1
+
 ### Multiple Paint Targets
 
 You can paint the same gradient to many elements for a matching effect. Just give them each a unique id and add them as paint targets!

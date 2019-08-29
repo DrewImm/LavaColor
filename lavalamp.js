@@ -9,6 +9,7 @@ var LavaColor = function() {
 	this.g2 = 0;
 	this.b2 = 0;
 	this.speed = 0.1;
+	this.speedRandom = 0.15;
 	this.lastRender = 0;
 	this.deltaTime = 0;
 	this.sineAmplitude = 30;
@@ -75,6 +76,14 @@ var LavaColor = function() {
 	};
 
 	/**
+	 * Manually set how far the speed will deviate randomly.
+	 * This will make the paint look more lively and less rigidly-timed.
+	 */
+	this.setSpeedRandom = (speedRandom) => {
+		this.speedRandom = speedRandom;
+	};
+
+	/**
      * Recolor the target
      */
 	this.recolor = () => {
@@ -113,8 +122,14 @@ var LavaColor = function() {
 		this.lastRender = timestamp;
 
 		// Calculate speed
+		var speedJitter = 0;
+
+		if (this.speedRandom) {
+			speedJitter = (Math.random() - 0.5) * this.speedRandom;
+		}
+
 		var speed = this.deltaTime;
-		speed *= this.speed;
+		speed *= this.speed + speedJitter;
 
 		this.sineT += speed / 100;
 
@@ -127,7 +142,11 @@ var LavaColor = function() {
 		var g2 = Math.max(Math.min(this.g2 + phase2, 200), 100);
 		var b2 = Math.max(Math.min(this.b2 + phase2, 200), 100);
 
-		this.rot += speed / 10;
+		if (this.speedRandom) {
+			speedJitter = (Math.random() - 0.5) * this.speedRandom;
+		}
+
+		this.rot += (speed + speedJitter) / 10;
 		if (this.rot > 360) {
 			this.rot = 0;
 		}
