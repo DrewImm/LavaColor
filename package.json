@@ -1,0 +1,18 @@
+{
+	"name": "lavalamp-color",
+	"version": "0.0.1",
+	"description": "Beautiful Javascript background gradients",
+	"main": "lavalamp.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DrewImm/LavaColor.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/DrewImm/LavaColor/issues"
+	},
+	"homepage": "https://github.com/DrewImm/LavaColor#readme"
+}
