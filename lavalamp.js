@@ -20,8 +20,8 @@ var LavaColor = function() {
 	this.DELTATIME = 1 / 60;
 
 	/**
-     * Get sine wave point
-     */
+	 * Get sine wave point
+	 */
 	this.getSinePoint = (t, phase, amplitude) => {
 		if (phase == undefined) {
 			phase = this.sinePhase;
@@ -35,8 +35,8 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Manually set the start colors
-     */
+	 * Manually set the start colors
+	 */
 	this.setColor = (r1, g1, b1, r2, g2, b2) => {
 		this.r1 = r1;
 		this.g1 = g1;
@@ -47,15 +47,15 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Manually set the start rotation
-     */
+	 * Manually set the start rotation
+	 */
 	this.setRotation = (rotation) => {
 		this.rot = rotation;
 	};
 
 	/**
-     * Manually set the amplitude (change in color)
-     */
+	 * Manually set the amplitude (change in color)
+	 */
 	this.setAmplitude = (amplitude) => {
 		this.sineAmplitude = amplitude;
 	};
@@ -69,8 +69,8 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Manually set the speed
-     */
+	 * Manually set the speed
+	 */
 	this.setSpeed = (speed) => {
 		this.speed = speed;
 	};
@@ -84,8 +84,8 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Recolor the target
-     */
+	 * Recolor the target
+	 */
 	this.recolor = () => {
 		this.rot = Math.floor(Math.random() * 360);
 		this.r1 = Math.round(Math.random() * 127) + 127;
@@ -101,8 +101,8 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Check a color for boundaries
-     */
+	 * Check a color for boundaries
+	 */
 	this.checkColor = (r, g, b) => {
 		if (r > 200 || r < 100 || g > 200 || g < 100 || b > 200 || b < 100) {
 			return false;
@@ -113,8 +113,8 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Render the target
-     */
+	 * Render the target
+	 */
 	this.render = (timestamp) => {
 		// Calculate delta time
 		this.deltaTime = timestamp - this.lastRender;
@@ -184,17 +184,17 @@ var LavaColor = function() {
 	};
 
 	/**
-     * Set a new target ID to paint.
-     *
-     * @param {string} id Target ID to paint
-     */
+	 * Set a new target ID to paint.
+	 *
+	 * @param {string} id Target ID to paint
+	 */
 	this.paint = (id) => {
 		this.targets.push(document.getElementById(id));
 	};
 
 	/**
-     * Start the render
-     */
+	 * Start the render
+	 */
 	this.recolor();
 	window.requestAnimationFrame(this.render);
 };
