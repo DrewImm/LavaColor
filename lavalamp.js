@@ -109,19 +109,14 @@ var LavaColor = function() {
 
 		this.sineT += speed / 100;
 
-		var r1c = this.getSinePoint(this.sineT, 1);
-		var g1c = this.getSinePoint(this.sineT, 1);
-		var b1c = this.getSinePoint(this.sineT, 1);
-		var r2c = this.getSinePoint(this.sineT, 0.25);
-		var g2c = this.getSinePoint(this.sineT, 0.25);
-		var b2c = this.getSinePoint(this.sineT, 0.25);
-
-		var r1 = Math.max(Math.min(this.r1 + r1c, 200), 100);
-		var g1 = Math.max(Math.min(this.g1 + g1c, 200), 100);
-		var b1 = Math.max(Math.min(this.b1 + b1c, 200), 100);
-		var r2 = Math.max(Math.min(this.r2 + r2c, 200), 100);
-		var g2 = Math.max(Math.min(this.g2 + g2c, 200), 100);
-		var b2 = Math.max(Math.min(this.b2 + b2c, 200), 100);
+		var phase1 = this.getSinePoint(this.sineT, 0.7);
+		var phase2 = this.getSinePoint(this.sineT, 0.3);
+		var r1 = Math.max(Math.min(this.r1 + phase1, 200), 100);
+		var g1 = Math.max(Math.min(this.g1 + phase1, 200), 100);
+		var b1 = Math.max(Math.min(this.b1 + phase1, 200), 100);
+		var r2 = Math.max(Math.min(this.r2 + phase2, 200), 100);
+		var g2 = Math.max(Math.min(this.g2 + phase2, 200), 100);
+		var b2 = Math.max(Math.min(this.b2 + phase2, 200), 100);
 
 		this.rot += speed / 10;
 		if (this.rot > 360) {
