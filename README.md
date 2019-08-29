@@ -43,6 +43,9 @@ Set how far the colors will deviate. For example, 1 will keep the colors nearly 
 
 Default is 30, range is 1-128.
 
+**mylava.setSineOffset(X)**
+Set the shift phase. https://en.wikipedia.org/wiki/Phase_(waves)#Phase_shift
+
 **Advanced**
 Note that the amplitude PLUS 
 

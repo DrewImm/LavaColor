@@ -15,6 +15,7 @@ var LavaColor = function() {
 	this.sineFrequency = 2;
 	this.sinePhase = 0;
 	this.sineT = 0;
+	this.sineOffset = 0.25;
 	this.DELTATIME = 1 / 60;
 
 	/**
@@ -56,6 +57,14 @@ var LavaColor = function() {
      */
 	this.setAmplitude = (amplitude) => {
 		this.sineAmplitude = amplitude;
+	};
+
+	/**
+	 * Manually set the sine offset (the shift in phases +/- overlap)
+	 * Default is 0.25
+	 */
+	this.setSineOffset = (offset) => {
+		this.sineOffset = offset;
 	};
 
 	/**
@@ -109,8 +118,8 @@ var LavaColor = function() {
 
 		this.sineT += speed / 100;
 
-		var phase1 = this.getSinePoint(this.sineT, 0.7);
-		var phase2 = this.getSinePoint(this.sineT, 0.3);
+		var phase1 = this.getSinePoint(this.sineT, +this.sineOffset);
+		var phase2 = this.getSinePoint(this.sineT, -this.sineOffset);
 		var r1 = Math.max(Math.min(this.r1 + phase1, 200), 100);
 		var g1 = Math.max(Math.min(this.g1 + phase1, 200), 100);
 		var b1 = Math.max(Math.min(this.b1 + phase1, 200), 100);
