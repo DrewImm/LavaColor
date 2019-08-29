@@ -175,3 +175,5 @@ var LavaColor = function() {
 	this.recolor();
 	window.requestAnimationFrame(this.render);
 };
+
+module.exports = { LavaColor };
